@@ -46,6 +46,14 @@ const defaultSlides = [
 function HeroSlider({ slides = defaultSlides, autoPlay = true, interval = 5000 }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Prefetch all slider images on mount
+    useEffect(() => {
+        slides.forEach((slide) => {
+            const img = new Image();
+            img.src = slide.image;
+        });
+    }, [slides]);
+
     const nextSlide = useCallback(() => {
         setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, [slides.length]);

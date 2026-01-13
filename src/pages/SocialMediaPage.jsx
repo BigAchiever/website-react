@@ -1,23 +1,7 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowTopRightOnSquare as FaExternalLinkAlt } from 'react-icons/hi2';
 
-// Lottie Animation Component with fetch
-function LottieAnimation({ src, loop = true, style = {} }) {
-    const [animationData, setAnimationData] = useState(null);
-
-    useEffect(() => {
-        fetch(src)
-            .then((response) => response.json())
-            .then((data) => setAnimationData(data))
-            .catch((error) => console.error('Error loading animation:', error));
-    }, [src]);
-
-    if (!animationData) return null;
-    return <Lottie animationData={animationData} loop={loop} style={style} />;
-}
 
 // Social media links data
 const socialLinks = [
@@ -63,33 +47,22 @@ function SocialHero() {
                 <div className="social-hero-content">
                     <motion.h1
                         className="social-hero-title"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
                         Connect With Us
                     </motion.h1>
                     <motion.p
                         className="social-hero-description"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         Stay updated with the latest news, events, and happenings at Symbiosis School.
                         Follow us on our social media platforms!
                     </motion.p>
                 </div>
-                <motion.div
-                    className="social-hero-animation"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                >
-                    <LottieAnimation
-                        src="/assets/animations/contact.json"
-                        style={{ width: '100%', height: 'auto', maxWidth: '500px' }}
-                    />
-                </motion.div>
             </div>
         </section>
     );

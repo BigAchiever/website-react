@@ -65,9 +65,16 @@
     }
     </script>
 
-  <!-- Preconnect for performance -->
+  <!-- Preconnect and Preload for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload Hero Image (First Slide) -->
+  <link rel="preload" as="image" href="/assets/images/two.jpeg" fetchpriority="high" />
+
+  <!-- Preload Critical Fonts -->
+  <link rel="preload" href="/assets/fonts/dk-magical-brush/magical_brush.otf" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="/assets/fonts/pfdinserif-1/DINPro.otf" as="font" type="font/otf" crossorigin />
 </head>
 
 <body>
