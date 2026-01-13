@@ -31,8 +31,8 @@ function App() {
           <Route path="social-media" element={<SocialMediaPage />} />
           <Route path="admissions" element={<AdmissionsPage />} />
           <Route path="gallery" element={<GalleryPage />} />
-          <Route path="learn-more-symbiosis-higher-secondary-school" element={<LearnMore1Page />} />
-          <Route path="learn-more-symbiosis-senior-secondary-school" element={<LearnMore2Page />} />
+          <Route path="best-mpboard-school-adhartal" element={<LearnMore1Page />} />
+          <Route path="best-school-in-maharajpur" element={<LearnMore2Page />} />
           <Route path="notifications" element={<NotificationsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

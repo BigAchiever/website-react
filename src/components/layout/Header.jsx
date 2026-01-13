@@ -11,8 +11,8 @@ const navLinks = [
         label: 'Our Schools',
         icon: HiAcademicCap,
         dropdown: [
-            { path: '/learn-more-symbiosis-higher-secondary-school', label: 'Higher Secondary School' },
-            { path: '/learn-more-symbiosis-senior-secondary-school', label: 'Senior Secondary School' },
+            { path: '/best-mpboard-school-adhartal', label: 'Higher Secondary School' },
+            { path: '/best-school-in-maharajpur', label: 'Senior Secondary School' },
         ]
     },
     { path: '/admissions', label: 'Admissions', icon: HiAcademicCap },

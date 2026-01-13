@@ -120,13 +120,13 @@ const schools = [
         name: 'Symbiosis Higher Secondary School',
         description: 'Providing quality education with a focus on holistic development and academic excellence for classes 9-10.',
         image: '/assets/images/highersec.jpeg',
-        link: '/learn-more-symbiosis-higher-secondary-school',
+        link: '/best-mpboard-school-adhartal',
     },
     {
         name: 'Symbiosis Senior Secondary School',
         description: 'Empowering students with knowledge, skills, and values for a successful future in classes 11-12.',
         image: '/assets/images/sen2.jpeg',
-        link: '/learn-more-symbiosis-senior-secondary-school',
+        link: '/best-school-in-maharajpur',
     },
 ];
 
