@@ -264,8 +264,10 @@
     height: 100%;
     background: rgba(26, 26, 46, 0.08);
     /* Navy with very low opacity */
-    width: 0;
-    transition: width 0.1s linear;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    will-change: transform;
 }
 
 /* Mobile V2 Styles */

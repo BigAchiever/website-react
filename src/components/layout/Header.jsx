@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlineBars3 as HiMenu, HiOutlineXMark as HiX, HiOutlineHome as HiHome, HiOutlineInformationCircle as HiInformationCircle, HiOutlineShare as HiShare, HiOutlinePhone as HiPhone, HiOutlineChevronDown as HiChevronDown, HiOutlinePhoto as HiPhotograph, HiOutlineAcademicCap as HiAcademicCap, HiOutlineBell as HiBell } from 'react-icons/hi2';
@@ -27,20 +27,30 @@ function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [scrollProgress, setScrollProgress] = useState(0);
+    const progressBarRef = useRef(null);
     const { isMobile } = useResponsive();
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Scroll handlers
+    // Optimized scroll handler with requestAnimationFrame throttling
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+        let ticking = false;
 
-            // Progress calculation
-            if (scrollTotal > 0) {
-                setScrollProgress((currentScrollY / scrollTotal) * 100);
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+
+                    // Update progress bar directly via DOM (no React re-render)
+                    if (scrollTotal > 0 && progressBarRef.current) {
+                        const progress = (currentScrollY / scrollTotal) * 100;
+                        progressBarRef.current.style.transform = `scaleX(${progress / 100})`;
+                    }
+
+                    ticking = false;
+                });
+                ticking = true;
             }
         };
 
@@ -81,8 +91,9 @@ function Header() {
                 <div className="header-pill-background">
                     <div className="header-progress-v2">
                         <motion.div
+                            ref={progressBarRef}
                             className="header-progress-v2-bar"
-                            style={{ width: `${scrollProgress}%` }}
+                            style={{ transformOrigin: 'left' }}
                         />
                     </div>
                 </div>
@@ -197,8 +208,9 @@ function Header() {
                 <div className="header-pill-background">
                     <div className="header-progress-v2">
                         <motion.div
+                            ref={progressBarRef}
                             className="header-progress-v2-bar"
-                            style={{ width: `${scrollProgress}%` }}
+                            style={{ transformOrigin: 'left' }}
                         />
                     </div>
                 </div>

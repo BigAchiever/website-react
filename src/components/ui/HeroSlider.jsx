@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlineChevronLeft as HiChevronLeft, HiOutlineChevronRight as HiChevronRight } from 'react-icons/hi2';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import './HeroSlider.css';
 
