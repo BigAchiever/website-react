@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiOutlineArrowDownTray as HiDownload, HiOutlineCheckCircle as HiCheckCircle, HiOutlineClock as HiClock, HiOutlineDocumentText as HiDocumentText, HiOutlineAcademicCap as HiAcademicCap } from 'react-icons/hi2';
 import Button from '../components/ui/Button';
+import usePageTitle from '../hooks/usePageTitle';
 import './AdmissionsPage.css';
 
 const admissionSteps = [
@@ -435,6 +436,8 @@ function AdmissionForm() {
 }
 
 function AdmissionsPage() {
+    usePageTitle('Admissions', 'Admissions open for session 2026-27 at Symbiosis School Jabalpur. Join us for quality education with holistic development.');
+
     return (
         <div className="admissions-page">
             {/* Hero Section */}

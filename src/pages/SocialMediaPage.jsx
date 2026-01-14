@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowTopRightOnSquare as FaExternalLinkAlt } from 'react-icons/hi2';
+import usePageTitle from '../hooks/usePageTitle';
 
 
 // Social media links data
@@ -169,6 +170,8 @@ function SocialMediaPreview() {
 
 // Main Social Media Page Component
 function SocialMediaPage() {
+    usePageTitle('Social Media', 'Connect with Symbiosis School Jabalpur on social media. Follow us for latest updates, events, and news.');
+
     return (
         <div className="social-page">
             <SocialHero />

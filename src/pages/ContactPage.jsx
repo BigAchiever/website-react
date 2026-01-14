@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import useResponsive from '../hooks/useResponsive';
+import usePageTitle from '../hooks/usePageTitle';
 import Button from '../components/ui/Button';
 import './ContactPage.css';
 
@@ -150,8 +151,9 @@ function LottieAnimation({ src, loop = true, style = {} }) {
 }
 
 // Contact Hero Component
-function ContactHero() {
+function ContactPage() {
     const { isMobile } = useResponsive();
+    usePageTitle('Contact Us', 'Get in touch with Symbiosis School Jabalpur. Visit us or reach out for admissions, queries, and more.');
 
     return (
         <section className="contact-hero">

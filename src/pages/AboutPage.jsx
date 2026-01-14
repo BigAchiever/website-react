@@ -2,9 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HiLightningBolt, HiLightBulb, HiAcademicCap, HiShieldCheck } from 'react-icons/hi';
 import { FaShapes, FaCube, FaLayerGroup, FaPenFancy } from 'react-icons/fa';
+import usePageTitle from '../hooks/usePageTitle';
 import '../styles/pages.css';
 
 const AboutPage = () => {
+    usePageTitle('About Us', 'Learn about Symbiosis School Jabalpur - our vision, mission, and commitment to nurturing future leaders since 2000.');
+
     return (
         <div className="about-page">
             <AboutHero />
