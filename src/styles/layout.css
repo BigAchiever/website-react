@@ -273,6 +273,9 @@
 /* Mobile V2 Styles */
 .header-v2-wrapper.mobile {
     padding: var(--space-3) var(--space-4);
+    transform: none !important;
+    transition: none;
+    overflow: visible;
 }
 
 .header-mobile-v2 {
