@@ -10,12 +10,19 @@ function AdmissionsPopup() {
     const [isMinimized, setIsMinimized] = useState(false);
 
     useEffect(() => {
-        // Show popup after 2.5 seconds delay
-        const timer = setTimeout(() => {
-            setIsOpen(true);
-        }, 2500);
+        // Check if on mobile (screen width <= 768px)
+        const isMobile = window.innerWidth <= 768;
 
-        return () => clearTimeout(timer);
+        if (isMobile) {
+            // On mobile, start minimized - only show when user clicks
+            setIsMinimized(true);
+        } else {
+            // On desktop, show popup after 2.5 seconds delay
+            const timer = setTimeout(() => {
+                setIsOpen(true);
+            }, 2500);
+            return () => clearTimeout(timer);
+        }
     }, []);
 
     const handleClose = () => {
@@ -49,7 +56,7 @@ function AdmissionsPopup() {
                             exit={{ opacity: 0, y: 100, scale: 0.9, rotate: 2 }}
                             transition={{ type: 'spring', damping: 20, stiffness: 150 }}
                         >
-                            <button className="popup-close-btn" onClick={handleClose}>
+                            <button className="popup-close-btn" onClick={handleClose} aria-label="Close admissions popup">
                                 <HiX />
                             </button>
 

@@ -207,7 +207,7 @@ function SectionsTab() {
                             <div className="school-card-content">
                                 <h3 className="school-card-name">{school.name}</h3>
                                 <p className="school-card-description">{school.description}</p>
-                                <Link to={school.link} className="school-learn-more-btn">
+                                <Link to={school.link} className="school-learn-more-btn" aria-label={`Learn more about ${school.name}`}>
                                     LEARN MORE
                                 </Link>
                             </div>
@@ -265,7 +265,7 @@ function EmpowermentSection() {
 
                 {/* Testimonials Part */}
                 <div className="testimonials-slider-v2">
-                    <button className="testimonial-nav prev" onClick={prevTestimonial}>
+                    <button className="testimonial-nav prev" onClick={prevTestimonial} aria-label="Previous testimonial">
                         <FaChevronLeft />
                     </button>
 
@@ -301,7 +301,7 @@ function EmpowermentSection() {
                         </motion.div>
                     </AnimatePresence>
 
-                    <button className="testimonial-nav next" onClick={nextTestimonial}>
+                    <button className="testimonial-nav next" onClick={nextTestimonial} aria-label="Next testimonial">
                         <FaChevronRight />
                     </button>
                 </div>
@@ -312,6 +312,8 @@ function EmpowermentSection() {
                             key={index}
                             className={`dot ${index === currentIndex ? 'active' : ''}`}
                             onClick={() => setCurrentIndex(index)}
+                            aria-label={`Go to testimonial ${index + 1}`}
+                            aria-current={index === currentIndex ? 'true' : 'false'}
                         />
                     ))}
                 </div>

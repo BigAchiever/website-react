@@ -64,7 +64,8 @@
     position: absolute;
     top: -24px;
     left: 24px;
-    background: #FF4444;
+    background: #D32F2F;
+    /* Darker red for better contrast with white text */
     color: white;
     font-weight: 900;
     font-size: 13px;

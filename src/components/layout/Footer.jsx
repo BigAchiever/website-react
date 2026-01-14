@@ -28,11 +28,15 @@ function Footer() {
                     src="/assets/images/map.svg"
                     alt="City Map Illustration"
                     className="footer-map-desktop"
+                    width="1200"
+                    height="400"
                 />
                 <img
                     src="/assets/images/map-mobile.svg"
                     alt="City Map Illustration"
                     className="footer-map-mobile"
+                    width="375"
+                    height="250"
                 />
             </div>
 
