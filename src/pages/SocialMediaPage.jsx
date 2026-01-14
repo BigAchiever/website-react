@@ -170,8 +170,7 @@ function SocialMediaPreview() {
 
 // Main Social Media Page Component
 function SocialMediaPage() {
-    usePageTitle('Social Media', 'Connect with Symbiosis School Jabalpur on social media. Follow us for latest updates, events, and news.');
-
+    usePageTitle('Social Media');
     return (
         <div className="social-page">
             <SocialHero />

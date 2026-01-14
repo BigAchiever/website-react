@@ -1,38 +1,17 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-/**
- * Custom hook to set page title and meta description dynamically
- * @param {string} title - Page title
- * @param {string} description - Page description (optional)
- */
-export function usePageTitle(title, description) {
+const usePageTitle = (title) => {
+    const location = useLocation();
+
     useEffect(() => {
-        // Store original title
-        const originalTitle = document.title;
-
-        // Set new title
-        document.title = `${title} | Symbiosis School Jabalpur`;
-
-        // Update meta description if provided
-        if (description) {
-            let metaDescription = document.querySelector('meta[name="description"]');
-            if (metaDescription) {
-                const originalDescription = metaDescription.getAttribute('content');
-                metaDescription.setAttribute('content', description);
-
-                // Restore on cleanup
-                return () => {
-                    document.title = originalTitle;
-                    metaDescription.setAttribute('content', originalDescription);
-                };
-            }
+        const baseTitle = 'Symbiosis School Jabalpur';
+        if (title) {
+            document.title = `${title} | ${baseTitle}`;
+        } else {
+            document.title = baseTitle;
         }
-
-        // Restore title on cleanup
-        return () => {
-            document.title = originalTitle;
-        };
-    }, [title, description]);
-}
+    }, [title, location]);
+};
 
 export default usePageTitle;

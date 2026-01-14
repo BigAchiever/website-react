@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiOutlineCamera, HiOutlinePhoto, HiOutlineLockClosed, HiOutlineXMark } from 'react-icons/hi2';
 import LightboxGallery from '../components/ui/LightboxGallery';
-import { FadeIn, ZoomIn } from '../components/animations/Animations';
-import usePageTitle from '../hooks/usePageTitle';
 import Button from '../components/ui/Button';
 import './GalleryPage.css';
+import usePageTitle from '../hooks/usePageTitle';
 
 // Hardcoded admin credentials (Phase 1)
 const ADMIN_CREDENTIALS = {
@@ -129,7 +128,7 @@ function LoginModal({ isOpen, onClose, onLoginSuccess }) {
 }
 
 function GalleryPage() {
-    usePageTitle('Gallery', 'Explore the vibrant moments and achievements at Symbiosis School Jabalpur through our photo gallery.');
+    usePageTitle('Gallery');
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
 
