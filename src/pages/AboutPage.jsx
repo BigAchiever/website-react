@@ -74,11 +74,11 @@ const UnderstandingSection = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
                 >
-                    <div className="card-badge">UNDERSTANDING</div>
-                    <h2>TAKING MESSY, COMPLEX CHALLENGES AND MAKING SENSE OF THEM</h2>
+                    <div className="card-badge">EMPOWERING</div>
+                    <h2>BUILDING CONFIDENT, INDEPENDENT THINKERS FOR TOMORROW</h2>
                     <p>
-                        Those wicked problems that feel impossible to resolve are perfect for Symbiosis Group of Schools!
-                        We help you build the skills you need to see your challenges with fresh eyes, and unlock new ways forward, through simple tools and activities.
+                        At Symbiosis, we don't just teach subjects – we nurture critical thinking and problem-solving abilities.
+                        Our approach empowers students to become independent learners who can tackle any challenge with confidence and creativity.
                     </p>
                 </motion.div>
             </div>
