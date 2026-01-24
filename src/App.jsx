@@ -11,6 +11,7 @@ import LearnMore2Page from './pages/LearnMore2Page';
 import NotificationsPage from './pages/NotificationsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AdmissionsPage from './pages/AdmissionsPage';
+import GalleryPage from './pages/GalleryPage';
 import EventsPage from './pages/EventsPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 
