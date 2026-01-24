@@ -11,7 +11,8 @@ import LearnMore2Page from './pages/LearnMore2Page';
 import NotificationsPage from './pages/NotificationsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AdmissionsPage from './pages/AdmissionsPage';
-import GalleryPage from './pages/GalleryPage';
+import EventsPage from './pages/EventsPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 
 // Import styles
 import './styles/index.css';
@@ -35,6 +36,8 @@ function App() {
           <Route path="social-media" element={<SocialMediaPage />} />
           <Route path="admissions" element={<AdmissionsPage />} />
           <Route path="gallery" element={<GalleryPage />} />
+          <Route path="events" element={<EventsPage />} />
+          <Route path="testimonials" element={<TestimonialsPage />} />
           <Route path="best-mpboard-school-adhartal" element={<LearnMore1Page />} />
           <Route path="best-school-in-maharajpur" element={<LearnMore2Page />} />
           <Route path="notifications" element={<NotificationsPage />} />

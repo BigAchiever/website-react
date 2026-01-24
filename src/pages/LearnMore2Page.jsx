@@ -30,7 +30,7 @@ const schoolInfo = {
 
     ],
     results: [
-        { title: 'Pass Rate', value: '92%', detail: 'Excellence in Board Examinations' },
+        { title: 'Pass Rate', value: '98%', detail: 'Excellence in Board Examinations' },
         { title: 'Top Percentile', value: '98.6%', detail: 'Highest Academic achievement' },
         { title: 'Competitive Success', value: 'JEE/NEET', detail: 'Multiple national qualifiers' },
     ],
@@ -323,8 +323,11 @@ function CTASection() {
     );
 }
 
+import usePageTitle from '../hooks/usePageTitle';
+
 // Main Learn More Page Component
 function LearnMore2Page() {
+    usePageTitle('Best School in Maharajpur');
     return (
         <div className="learn-more-page">
             <LearnMoreHero />

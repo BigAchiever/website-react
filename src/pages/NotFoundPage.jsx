@@ -26,7 +26,10 @@ function LottieAnimation({ src, loop = true, style = {} }) {
     return <Lottie animationData={animationData} loop={loop} style={style} />;
 }
 
+import usePageTitle from '../hooks/usePageTitle';
+
 function NotFoundPage() {
+    usePageTitle('Page Not Found');
     return (
         <div className="not-found-page">
             <motion.div

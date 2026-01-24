@@ -131,7 +131,10 @@ function SuccessCard({ name, achievement, batch, quote }) {
     );
 }
 
+import usePageTitle from '../hooks/usePageTitle';
+
 function TestimonialsPage() {
+    usePageTitle('Testimonials');
     return (
         <div className="testimonials-page">
             {/* Hero Section */}

@@ -164,7 +164,10 @@ function NewsCard({ news }) {
     );
 }
 
+import usePageTitle from '../hooks/usePageTitle';
+
 function EventsPage() {
+    usePageTitle('Events');
     const [activeTab, setActiveTab] = useState('upcoming');
 
     return (

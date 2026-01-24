@@ -429,8 +429,11 @@ function AdmissionContactSection() {
     );
 }
 
+import usePageTitle from '../hooks/usePageTitle';
+
 // Main Home Page Component
 function HomePage() {
+    usePageTitle('Home');
     return (
         <div className="home-page">
             <HeroSlider />

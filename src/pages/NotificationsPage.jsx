@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import usePageTitle from '../hooks/usePageTitle';
 
 function NotificationsPage() {
+    usePageTitle('Notifications');
     const location = useLocation();
     const notices = location.state?.notices || [];
 

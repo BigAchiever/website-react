@@ -28,7 +28,7 @@ const schoolInfo = {
         { name: 'Computer Lab', description: 'Modern computer lab with internet access' },
     ],
     results: [
-        { title: 'Pass Rate', value: '92%', detail: 'Consistent record in Board Exams' },
+        { title: 'Pass Rate', value: '98%', detail: 'Consistent record in Board Exams' },
         { title: 'Merit Holders', value: '85%+', detail: 'Students with First Division' },
         { title: 'Distinctions', value: '50+', detail: 'Subject-wise high achievers' },
     ],
@@ -313,8 +313,11 @@ function CTASection() {
     );
 }
 
+import usePageTitle from '../hooks/usePageTitle';
+
 // Main Learn More Page Component
 function LearnMore1Page() {
+    usePageTitle('Best MP Board School in Adhartal');
     return (
         <div className="learn-more-page">
             <LearnMoreHero />
